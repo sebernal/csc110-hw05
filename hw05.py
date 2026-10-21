@@ -5,17 +5,22 @@ References: (anything you checked to solve this)
 """
 
 def get_letter():
-    """ Add your own Docstring """
+    """ """
     # remove the default return and add your code
     #Start loop
     while True:
+        #Get user input
         letter = input("Give me a single uppercase letter: ")
+        #Check length of string
         str_length = len(letter)
+        #If the string is not 1 letter print error
         if str_length!= 1:
             print("Error: it needs to be a single character.")
             continue
+        #Check if letter is A, B, or C
         if letter =='A' or letter=='B' or letter=='C':
             return letter
+        #If letter is not A, B, or C print error 
         else:
             print("Error: You provided the wrong character.")
             continue 
@@ -23,9 +28,29 @@ def get_letter():
 def get_digit():
     """ Add your own Docstring """
     # remove the default return and add your code
-    return 0
-
-
+    while True:
+    #Gets a number 
+        digit = input("Give an single number character: ")
+    #Check if input is a digit
+        digit_check = digit.isdigit()
+    #Check length of digit
+        digit_length = len(digit) 
+    #If input is not a digit, print error
+        if digit_check == False:
+            print("Error: your input should be only digits.")
+            continue
+    #If not single digit, print error
+        if digit_length!=1:
+            print("Error: a single digit needs to be in [1,3].")
+            continue
+    #If digit is in range, return digit 
+        if  digit =='1' or digit=='2' or digit=='3':
+            return digit
+    #If digit is not in range, print error
+        else:
+            print("Error: a single digit needs to be in [1,3].")
+            continue
+        
 def check_pattern(letter, digit, lst):
     """ Add your own Docstring """
     # remove the default pass and add your code
