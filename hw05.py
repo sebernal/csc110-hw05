@@ -54,7 +54,32 @@ def get_digit():
 def check_pattern(letter, digit, lst):
     """ Add your own Docstring """
     # remove the default pass and add your code
-    pass
+    print("Strings with the pattern:")
+    #Start outer loop, go through each string in the list
+    for st in lst:
+    #Inner loop, go through each character in the string
+        for i, ch in enumerate(st):
+            index_let = i
+            character = ch
+    #Check if the character is the letter 
+            if character == letter:
+    #Go through each character in the string
+                for i, num in enumerate(st):
+                    index_num = i
+                    number = num
+    #Check if number is the digit
+                    if number == str(digit):
+    #If the letter's index is less than the number's index, print the string 
+                        if index_let < index_num:
+                            print(st, end=" ")
+    #Once the string is printed, leave the inner loop
+                            break
+                        print()
+            else:
+                continue
+                        
+            
+    
 
 
 #  The function main is INCOMPLETE, you must finish it
@@ -77,8 +102,15 @@ def main ():
     #          IF the user replies with anything else, the loop ends
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
-
-    # Your code Here
+    while True:
+        user_let = get_letter()
+        user_num = get_digit()
+        check_pattern(user_let, user_num, st_list)
+        yes_no = input("Try Again?(y/n):")
+        if yes_no != 'y':
+            break
+    print("The End")
+            
 
     # -------------------------------------------------
     # No need to modify anything Below this line
