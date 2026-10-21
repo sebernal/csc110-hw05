@@ -5,7 +5,7 @@ References: (anything you checked to solve this)
 """
 
 def get_letter():
-    """ """
+    """Gets a single uppercase letter from A to C """
     # remove the default return and add your code
     #Start loop
     while True:
@@ -26,7 +26,7 @@ def get_letter():
             continue 
 
 def get_digit():
-    """ Add your own Docstring """
+    """ Gets a single digit within the range 1 to 3 """
     # remove the default return and add your code
     while True:
     #Gets a number 
@@ -52,18 +52,20 @@ def get_digit():
             continue
         
 def check_pattern(letter, digit, lst):
-    """ Add your own Docstring """
+    """Searches list of strings for a letter-number pair that appears in order """
     # remove the default pass and add your code
     print("Strings with the pattern:")
     #Start outer loop, go through each string in the list
     for st in lst:
     #Inner loop, go through each character in the string
+    #Use enumerate to pair the character with it's index
         for i, ch in enumerate(st):
             index_let = i
             character = ch
     #Check if the character is the letter 
             if character == letter:
     #Go through each character in the string
+    #Use enumerate again to pair each element with it's index
                 for i, num in enumerate(st):
                     index_num = i
                     number = num
@@ -78,10 +80,7 @@ def check_pattern(letter, digit, lst):
             else:
                 continue
                         
-            
-    
-
-
+        
 #  The function main is INCOMPLETE, you must finish it
 # before you submit
 def main ():
@@ -102,16 +101,20 @@ def main ():
     #          IF the user replies with anything else, the loop ends
     # ADD YOUR CODE UNDER THIS LINE
     # -------------------------------------------------
+#Start loop
     while True:
+#Save the letter returned in function get_letter in user_let
         user_let = get_letter()
+#Save the digit returned in get_digit in user_num
         user_num = get_digit()
+#Call function with the neccessary arguments
         check_pattern(user_let, user_num, st_list)
+#Ask user if they want to try again
         yes_no = input("Try Again?(y/n):")
+#If user does not want to try again, stop loop
         if yes_no != 'y':
             break
-    print("The End")
             
-
     # -------------------------------------------------
     # No need to modify anything Below this line
     print("The End")
